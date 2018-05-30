@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{B98BD042-ED5B-D162-7BA5-52530E81F317}</ProjectGuid>
+    <ProjectGuid>{9417F21F-AF69-CF42-B8EB-BACF4D626AAD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -59,18 +59,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\A3Datasheet.cs" />
     <Compile Include="Assets\Boat.cs" />
     <Compile Include="Assets\CubeScript.cs" />
+    <Compile Include="Assets\Emergency.cs" />
     <Compile Include="Assets\OldSketch.cs" />
     <Compile Include="Assets\PracTest2.cs" />
     <Compile Include="Assets\Product.cs" />
     <Compile Include="Assets\Sketch.cs" />
     <Compile Include="Assets\WebRequest.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/Klemens/Documents/TestUnity/Infomgmt192 Exercise/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Klemens/Documents/TestUnity/Infomgmt192 A3/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Klemens/Documents/TestUnity/Infomgmt192 Exercise/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Klemens/Documents/TestUnity/Infomgmt192 A3/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -268,7 +270,7 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Pathfinding.JsonFx">
-      <HintPath>C:/Users/Klemens/Documents/TestUnity/Infomgmt192 Exercise/Assets/Pathfinding.JsonFx.dll</HintPath>
+      <HintPath>C:/Users/Klemens/Documents/TestUnity/Infomgmt192 A3/Assets/Pathfinding.JsonFx.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/Klemens/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
@@ -309,7 +311,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{C5A21DFA-62B0-0DC2-ABC9-01418950BCC2}</Project>
+      <Project>{D5119C38-3DE1-8BEC-0002-78C1FCA9D06D}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
   </ItemGroup>

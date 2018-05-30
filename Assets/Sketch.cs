@@ -5,11 +5,11 @@ using UnityEngine.Networking;
 
 public class Sketch : MonoBehaviour {
     public GameObject myPrefab;
-    public string _WebsiteURL = "https://testklemens.azurewebsites.net/tables/PracTest2?zumo-api-version=2.0.0";
+    //Changed URL to get data from A3Datasheet table
+    //Before: public string _WebsiteURL = "https://testklemens.azurewebsites.net/tables/PractTest2?zumo-api-version=2.0.0";
+    //After:
+    public string _WebsiteURL = "https://testklemens.azurewebsites.net/tables/A3Datasheet?zumo-api-version=2.0.0";
 
-    private float x;
-    private float y;
-    private float z;
 
     void Start () {
         //Reguest.GET can be called passing in your ODATA url as a string in the form:
@@ -29,7 +29,10 @@ public class Sketch : MonoBehaviour {
         }
 
         //We can now deserialize into an array of objects - in this case the class we created. The deserializer is smart enough to instantiate all the classes and populate the variables based on column name.
-        Emergency[] PracTest2 = JsonReader.Deserialize<Emergency[]>(jsonResponse);
+        //Changed class and variable to get data from A3Datasheet script and table
+        //Before: Emergency[] PractTest2 = JsonReader.Deserialize<Emergency[]>(jsonResponse);
+        //After:
+        A3[] A3Datasheet = JsonReader.Deserialize<A3[]>(jsonResponse);
 
         //----------------------
         //YOU WILL NEED TO DECLARE SOME VARIABLES HERE SIMILAR TO THE CREATIVE CODING TUTORIAL
@@ -40,10 +43,16 @@ public class Sketch : MonoBehaviour {
         //----------------------
 
         //We can now loop through the array of objects and access each object individually
-        foreach (Emergency Emergency in PracTest2)
+        //Changed foreach to loop each objects based on data retrieved from A3Datasheet scrip and table
+        //Before: foreach (Emergency Emergency in PracTest2)
+        //After:
+        foreach (A3 A3Table in A3Datasheet)
         {
             //Example of how to use the object
-            Debug.Log("This emergency name is: " + Emergency.EmergencyName);
+            //Changed debug log to display 'This card name is [Title]'
+            //Before: Debug.Log("This emergency name is: " Emergency.EmergencyName);
+            //After:
+            Debug.Log("This card name is: " + A3Table.Title);
             //----------------------
             //YOUR CODE TO INSTANTIATE NEW PREFABS GOES HERE
                 
@@ -51,18 +60,17 @@ public class Sketch : MonoBehaviour {
 
             float sin = Mathf.Sin(perc * Mathf.PI / 2);
 
-            x = Emergency.X;
-            y = Emergency.Y;
-            z = Emergency.Z;
-            
-            //float x = 1.8f + sin * totalDistance;
-            //float y = 5.0f;
-            //float z = 0.0f;
+            float x = 1.8f + sin * totalDistance;
+            float y = 5.0f;
+            float z = 0.0f;
 
             var newCube = (GameObject)Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity);
             newCube.GetComponent<CubeScript>().setSize(0.45f * (1.0f - perc));
-            newCube.GetComponent<CubeScript>().rotateSpeed = 0; //0.2f + perc * 4.0f;
-            newCube.transform.Find("New Text").GetComponent<TextMesh>().text = Emergency.EmergencyName;
+            newCube.GetComponent<CubeScript>().rotateSpeed = 0.2f + perc * 2.0f; //4.0f
+            //Changed text to display title of trello card
+            //Before: newCube.transform.Find("New Text").GetComponent<TextMesh>().text = Emergency.EmergencyName;
+            //After:
+            newCube.transform.Find("New Text").GetComponent<TextMesh>().text = A3Table.Title;
             i++;
 
             //----------------------

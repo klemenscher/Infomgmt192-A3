@@ -655,7 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPrefab: {fileID: 1871218086142066, guid: b87e0228759c77448b96f61bf82febf1, type: 2}
-  _WebsiteURL: https://testklemens.azurewebsites.net/tables/PracTest2?zumo-api-version=2.0.0
+  _WebsiteURL: https://testklemens.azurewebsites.net/tables/A3Datasheet?zumo-api-version=2.0.0
 --- !u!1 &1503538579
 GameObject:
   m_ObjectHideFlags: 0
